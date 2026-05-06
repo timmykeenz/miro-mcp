@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "miro-mcp": {
+      "type": "stdio",
+      "command": "${workspaceFolder}/miro-mcp.exe",
+      "env": {
+        "MIRO_ACCESS_TOKEN": "${env:MIRO_ACCESS_TOKEN}"
+      }
+    }
+  }
+}
