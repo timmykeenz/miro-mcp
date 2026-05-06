@@ -152,8 +152,8 @@ type shapeData struct {
 
 type shapeStyle struct {
 	FillColor   string `json:"fillColor"`
-	StrokeColor string `json:"strokeColor"`
-	TextColor   string `json:"textColor"`
+	BorderColor string `json:"borderColor"`
+	TextColor   string `json:"color"`
 }
 
 type shapePosition struct {
@@ -280,7 +280,7 @@ func createFlowChart(ctx context.Context, c *miroclient.Client, boardID, dsl str
 
 		body := shapeCreateRequest{
 			Data:     shapeData{Shape: shape, Content: n.label},
-			Style:    shapeStyle{FillColor: fillColor, StrokeColor: strokeColor, TextColor: "#1a1a2e"},
+			Style:    shapeStyle{FillColor: fillColor, BorderColor: strokeColor, TextColor: "#1a1a2e"},
 			Position: shapePosition{X: x, Y: y, Origin: "center"},
 			Geometry: shapeGeometry{Width: nodeWidth, Height: nodeHeight},
 		}
